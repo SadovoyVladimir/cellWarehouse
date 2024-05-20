@@ -1,0 +1,30 @@
+h1 {
+  margin-top: 0;
+}
+
+button {
+  margin: 0 auto;
+  display: block;
+  width: 25%;
+}
+
+.shelf-container {
+  width: 100%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.shelf {
+  background: #e0e0e0;
+  border: 5px solid black;
+  border-top: none;
+}
+
+.cell {
+  flex: 1;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #b0b0b0;
+  padding: 20px;
+}

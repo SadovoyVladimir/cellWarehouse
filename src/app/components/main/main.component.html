@@ -1,0 +1,63 @@
+@if(!isWarehouseDrawn){
+
+<h1>Создание склада</h1>
+<div>
+  <mat-form-field>
+    <mat-label>Количество стеллажей:</mat-label>
+    <input
+      (input)="onInput()"
+      matInput
+      type="number"
+      [(ngModel)]="numberOfRacks"
+      min="1"
+      max="20"
+    />
+    <mat-hint align="start"><strong>Максимум 20 стеллажей</strong></mat-hint>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Количество полок на стелаже:</mat-label>
+    <input
+      (input)="onInput()"
+      matInput
+      type="number"
+      [(ngModel)]="numberOfShelves"
+      min="1"
+      max="10"
+    />
+    <mat-hint align="start"><strong>Максимум 10 полок</strong></mat-hint>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Количество ячеек на полке:</mat-label>
+    <input
+      (input)="onInput()"
+      matInput
+      type="number"
+      [(ngModel)]="numberOfCells"
+      min="1"
+      max="15"
+    />
+    <mat-hint align="start"><strong>Максимум 15 ячеек</strong></mat-hint>
+  </mat-form-field>
+</div>
+
+<button
+  mat-flat-button
+  disabled="{{ isDisabled }}"
+  (click)="drawWarehouse()"
+  color="primary"
+>
+  Отрисовать склад
+</button>
+
+} @else {
+
+<app-warehouse
+  [shelves]="shelves"
+  [cells]="cells"
+  [racks]="numberOfRacks"
+  (onReturn)="onReturn()"
+/>
+
+}

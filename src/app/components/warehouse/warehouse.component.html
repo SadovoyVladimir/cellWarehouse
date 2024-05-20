@@ -1,0 +1,23 @@
+<h1>На вашем складе {{ racksCount }} {{ racksTitle }}</h1>
+<div class="shelf-container" fxLayout="column">
+  @for (shelf of shelves; track $index) {
+  <mat-card class="shelf" fxLayout="row" fxLayoutGap="2px">
+    @for (cell of cells; track $index) {
+    <div
+      class="cell"
+      [matTooltip]="getRandomTitle()"
+      matTooltipPosition="right"
+      (mouseenter)="changeRandomTitle()"
+    >
+      <div>
+        {{ cell }}
+      </div>
+    </div>
+    }
+  </mat-card>
+  }
+</div>
+
+<button (click)="return()" mat-flat-button color="primary">
+  Вернуться к созданию склада
+</button>
